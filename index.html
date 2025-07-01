@@ -1,427 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>SurveyMonkey Careers | Join Our Remote Team</title>
-  <style>
-    /* Base and theme colors */
-    :root {
-      --green: #2c7a7b;
-      --orange: #f97316;
-      --gray-light: #f4f4f4;
-      --gray-dark: #555;
-      --font-family: Arial, sans-serif;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SurveyMonkey Careers</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px 40px;
+  }
+  h1, h2 {
+    color: #2c7a7b;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  h3 {
+    color: #f97316;
+    margin-bottom: 0.3em;
+  }
+  p, ul {
+    margin-bottom: 1em;
+  }
+  section {
+    margin-bottom: 40px;
+    background-color: #f5f7f8; /* subtle ashy background */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  /* Center align who we are and explore roles sections */
+  #who-we-are, #explore-roles {
+    background-color: #f0f6f6;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #who-we-are p, #explore-roles p {
+    max-width: 700px;
+    margin: 0 auto 1em;
+    font-size: 1.1em;
+    color: #2c7a7b;
+  }
+
+  /* Dropdown toggle styling */
+  details {
+    border: 1px solid #2c7a7b;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: white;
+  }
+  summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #2c7a7b;
+    list-style: none;
+    user-select: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  details div.content {
+    padding: 15px 20px;
+    color: #333;
+    border-top: 1px solid #2c7a7b;
+    background-color: #e6fffa;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  details div.content ul {
+    padding-left: 20px;
+  }
+  details div.content ul li {
+    margin-bottom: 0.4em;
+  }
+  /* Skills heading in content */
+  .skills {
+    font-weight: 600;
+    margin-top: 10px;
+    color: #f97316;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
     body {
-      font-family: var(--font-family);
-      margin: 0; padding: 0;
-      color: #333;
-      line-height: 1.6;
-      background-color: #fff;
+      font-size: 14px;
     }
     .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 10px 15px 30px;
     }
-    h1, h2, h3, h4 {
-      color: var(--green);
-      margin-bottom: 0.5rem;
-      font-weight: 700;
+    h1, h2 {
+      font-size: 1.6em;
     }
-    h1 {
-      font-size: 2.25rem;
-      text-align: center;
-      margin-top: 2rem;
-      margin-bottom: 1.5rem;
+    summary {
+      font-size: 1em;
+      padding: 10px 15px;
     }
-    /* Centered sections */
-    .centered-section {
-      max-width: 800px;
-      margin: 0 auto 3rem auto;
-      text-align: center;
-      color: var(--gray-dark);
+    details div.content {
+      font-size: 0.9em;
+      padding: 12px 15px;
     }
-    .centered-section p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    /* Slight ashy background for values section */
-    .values-section {
-      background-color: var(--gray-light);
-      padding: 2rem 1rem;
-      border-radius: 8px;
-      margin-bottom: 3rem;
-    }
-    .value-item {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .value-item h4 {
-      margin-top: 1rem;
-      color: var(--orange);
-      font-weight: 600;
-    }
-    .value-item .img-placeholder {
-      width: 150px;
-      height: 100px;
-      background: #ddd;
-      border-radius: 6px;
-      margin: 0.5rem auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-style: italic;
-      font-size: 0.9rem;
-    }
-    /* Explore roles section */
-    #explore-roles {
-      text-align: center;
-      margin-bottom: 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #explore-roles p.tip {
-      font-style: italic;
-      color: var(--gray-dark);
-      font-size: 0.95rem;
-    }
-    /* Accordion styles */
-    .accordion {
-      background-color: var(--green);
-      color: white;
-      cursor: pointer;
-      padding: 15px 20px;
-      width: 100%;
-      border: none;
-      outline: none;
-      text-align: left;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
-      border-radius: 5px;
-      margin-bottom: 0.3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .accordion:hover,
-    .accordion.active {
-      background-color: var(--orange);
-    }
-    .accordion:after {
-      content: "\002B"; /* plus sign */
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-    .accordion.active:after {
-      content: "\2212"; /* minus sign */
-    }
-    .panel {
-      padding: 0 20px 15px 20px;
-      background-color: #f9f9f9;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      border-left: 4px solid var(--green);
-      border-radius: 0 0 5px 5px;
-      margin-bottom: 1.5rem;
-    }
-    .panel p, .panel ul {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      color: #444;
-    }
-    .panel ul {
-      padding-left: 1.25rem;
-    }
-    .panel ul li {
-      margin-bottom: 0.25rem;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.75rem;
-      }
-      .accordion {
-        font-size: 1rem;
-        padding: 12px 15px;
-      }
-      .value-item .img-placeholder {
-        width: 120px;
-        height: 80px;
-      }
-      .container {
-        padding: 0 0.5rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <main class="container">
 
-    <!-- Heading -->
-    <h1>SurveyMonkey is where the curious come to grow.</h1>
+<div class="container">
 
-    <!-- Who We Are -->
-    <section class="centered-section" id="who-we-are">
-      <h2>Who We Are</h2>
-      <p>
-        SurveyMonkey is the world’s most popular platform for surveys and forms, built for business—loved by users. We combine powerful capabilities with intuitive design, effectively serving every use case, from customer experience to employee engagement, market research to payment and registration forms. With built-in research expertise and AI-powered technology, it’s like having a team of expert researchers right at your fingertips.
-      </p>
-      <p>
-        Trusted by millions—from startups to Fortune 500 companies—SurveyMonkey helps teams gather insights and information that inspire better decisions, create experiences people love, and drive business growth.
-      </p>
-    </section>
+  <h1>SurveyMonkey is where the curious come to grow.</h1>
 
-    <!-- Values Section -->
-    <section class="values-section">
-      <div class="value-item">
-        <div class="img-placeholder">Employee listening intently<br>Photo placeholder</div>
-        <h4>Stay curious</h4>
-        <p>Curiosity is our superpower. We embrace a growth mindset, we take risks, and we learn from the outcomes.</p>
-      </div>
-      <div class="value-item">
-        <div class="img-placeholder">Team members placing post-its<br>Photo placeholder</div>
-        <h4>Innovate for customers</h4>
-        <p>We grow and innovate right alongside our customers. To deliver value to them, we listen, we understand, we act—and we keep at it.</p>
-      </div>
-      <div class="value-item">
-        <div class="img-placeholder">Diverse employees building with Lego<br>Photo placeholder</div>
-        <h4>Stand for equality</h4>
-        <p>We champion diversity and welcome individuality. Together we create an equitable workplace where each person can truly belong and do their best work.</p>
-      </div>
-      <div class="value-item">
-        <div class="img-placeholder">Two employees walking down hallway<br>Photo placeholder</div>
-        <h4>Trust the team</h4>
-        <p>We succeed as one global team. We are accountable to one another, value opinions, and communicate with clarity and kindness. We prioritize health and support one another.</p>
-      </div>
-      <div class="value-item">
-        <div class="img-placeholder">Group of employees in colorful shirts<br>Photo placeholder</div>
-        <h4>Make it happen</h4>
-        <p>Our customers, colleagues, and community inspire us to compete, win, and give back. We focus, we act with integrity, and we own the results.</p>
-      </div>
-    </section>
+  <section id="who-we-are">
+    <h2>Who we are</h2>
+    <p>SurveyMonkey is the world’s most popular platform for surveys and forms, built for business—loved by users. We combine powerful capabilities with intuitive design, effectively serving every use case, from customer experience to employee engagement, market research to payment and registration forms. With built-in research expertise and AI-powered technology, it’s like having a team of expert researchers right at your fingertips.</p>
+    <p>Trusted by millions—from startups to Fortune 500 companies—SurveyMonkey helps teams gather insights and information that inspire better decisions, create experiences people love, and drive business growth.</p>
+  </section>
 
-    <!-- Explore Roles Section -->
-    <section id="explore-roles" class="centered-section">
-      <h2>Explore open roles by department</h2>
-      <p>You’re in the right place. SurveyMonkey jobs are listed only on this careers page, our verified LinkedIn, Indeed, and Naukri (for roles in India). If you apply through LinkedIn, you’ll be redirected to our secure applicant system, Greenhouse.</p>
-      <p class="tip">Tip: When in doubt, come back to this page—this is the official source for SurveyMonkey jobs. We’re committed to a hiring process that’s secure, transparent, and candidate-first.</p>
-    </section>
+  <section id="values" style="background-color:#f9fafb; padding:20px; border-radius:10px; margin-bottom:40px;">
+    <h2>The values that drive us</h2>
+    <!-- Placeholder for your base64 PNG images -->
+    <div>
+      <h3>Stay curious</h3>
+      <p>Curiosity is our superpower. We embrace a growth mindset, we take risks, and we learn from the outcomes.</p>
+      <!-- Image placeholder -->
+      <div style="height:100px; background:#ddd; border-radius:8px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; color:#aaa;">Employee listening intently Photo (Base64 PNG here)</div>
+    </div>
+    <div>
+      <h3>Innovate for customers</h3>
+      <p>We grow and innovate right alongside our customers. To deliver value to them, we listen, we understand, we act—and we keep at it.</p>
+      <div style="height:100px; background:#ddd; border-radius:8px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; color:#aaa;">Team members placing post-its with ideas on a wall Photo (Base64 PNG here)</div>
+    </div>
+    <div>
+      <h3>Stand for equality</h3>
+      <p>We champion diversity and welcome individuality. Together we create an equitable workplace where each person can truly belong and do their best work.</p>
+      <div style="height:100px; background:#ddd; border-radius:8px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; color:#aaa;">Diverse employees building with a Lego set Photo (Base64 PNG here)</div>
+    </div>
+    <div>
+      <h3>Trust the team</h3>
+      <p>We succeed as one global team. We are accountable to one another, value opinions, and communicate with clarity and kindness. We prioritize health and support one another.</p>
+      <div style="height:100px; background:#ddd; border-radius:8px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; color:#aaa;">Two employees walking down an office hallway Photo (Base64 PNG here)</div>
+    </div>
+    <div>
+      <h3>Make it happen</h3>
+      <p>Our customers, colleagues, and community inspire us to compete, win, and give back. We focus, we act with integrity, and we own the results.</p>
+      <div style="height:100px; background:#ddd; border-radius:8px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; color:#aaa;">Group of employees wearing colorful shirts and posing for a group photo Photo (Base64 PNG here)</div>
+    </div>
+  </section>
 
-    <!-- Accordion Sections for Departments -->
+  <section id="explore-roles">
+    <h2>Explore open roles by department</h2>
+    <p>You’re in the right place. SurveyMonkey jobs are listed only on this careers page, our verified LinkedIn, Indeed, and Naukri (for roles in India). If you apply through LinkedIn, you’ll be redirected to our secure applicant system, Greenhouse.</p>
+    <p><em>Tip:</em> When in doubt, come back to this page—this is the official source for SurveyMonkey jobs. We’re committed to a hiring process that’s secure, transparent, and candidate-first.</p>
+  </section>
+
+  <!-- Departments with collapsible role descriptions -->
+  <section id="departments">
 
     <!-- Engineering -->
-    <button class="accordion">Engineering</button>
-    <div class="panel">
-      <h3>Cloud Infrastructure Engineer (Entry-Level)</h3>
-      <p><strong>Work Mode:</strong> Remote-first with optional hybrid onboarding or team meetups</p>
-      <p><strong>Focus:</strong> Supporting and scaling SurveyMonkey’s AWS-based infrastructure</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Assist in managing cloud environments (AWS, Terraform, Docker)</li>
-        <li>Monitor system performance and automate infrastructure tasks</li>
-        <li>Collaborate with DevOps and security teams to maintain uptime and compliance</li>
-      </ul>
-      <p><strong>Ideal For:</strong> CS or IT grads with cloud certifications (e.g., AWS Cloud Practitioner)</p>
-
-      <h3>Survey Platform QA Analyst</h3>
-      <p><strong>Work Mode:</strong> Remote with optional hybrid collaboration during product launches</p>
-      <p><strong>Focus:</strong> Ensuring the quality and functionality of SurveyMonkey’s survey tools</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Test new survey features and integrations (e.g., Microsoft Teams, Slack)</li>
-        <li>Write test cases and report bugs across web and mobile platforms</li>
-        <li>Work closely with product and engineering teams to improve user experience</li>
-      </ul>
-      <p><strong>Ideal For:</strong> Grads with a background in software testing, UX, or product QA</p>
-
-      <h3>SaaS Integration Support Engineer</h3>
-      <p><strong>Work Mode:</strong> Remote with optional hybrid for team syncs or client onboarding</p>
-      <p><strong>Focus:</strong> Helping enterprise clients integrate SurveyMonkey with platforms like Microsoft Entra ID, Salesforce, or Oracle</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Guide clients through API usage, SSO setup, and app integrations</li>
-        <li>Troubleshoot technical issues and escalate complex problems</li>
-        <li>Document best practices and contribute to knowledge bases</li>
-      </ul>
-      <p><strong>Ideal For:</strong> Entry-level engineers with strong communication skills and a basic understanding of APIs and identity management</p>
-    </div>
+    <details>
+      <summary><h3>Engineering</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Cloud Infrastructure Engineer (Entry-Level)</summary>
+          <div>
+            <p><strong>Work Mode:</strong> Remote-first with optional hybrid onboarding or team meetups</p>
+            <p><strong>Focus:</strong> Supporting and scaling SurveyMonkey’s AWS-based infrastructure.</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>Assist in managing cloud environments (AWS, Terraform, Docker).</li>
+              <li>Monitor system performance and automate infrastructure tasks.</li>
+              <li>Collaborate with DevOps and security teams to maintain uptime and compliance.</li>
+            </ul>
+            <p class="skills">Skills needed: Cloud certifications (AWS Cloud Practitioner), knowledge of AWS, Terraform, Docker, strong problem-solving, and collaboration skills.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Survey Platform QA Analyst</summary>
+          <div>
+            <p><strong>Work Mode:</strong> Remote with optional hybrid collaboration during product launches</p>
+            <p><strong>Focus:</strong> Ensuring quality and functionality of SurveyMonkey’s survey tools.</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>Test new survey features and integrations (Microsoft Teams, Slack).</li>
+              <li>Write test cases and report bugs across web and mobile platforms.</li>
+              <li>Work closely with product and engineering teams to improve user experience.</li>
+            </ul>
+            <p class="skills">Skills needed: Software testing, QA methodologies, UX understanding, attention to detail, strong communication.</p>
+          </div>
+        </details>
+        <details>
+          <summary>SaaS Integration Support Engineer</summary>
+          <div>
+            <p><strong>Work Mode:</strong> Remote with optional hybrid for team syncs or client onboarding</p>
+            <p><strong>Focus:</strong> Helping enterprise clients integrate SurveyMonkey with platforms like Microsoft Entra ID, Salesforce, or Oracle.</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul>
+              <li>Guide clients through API usage, SSO setup, and app integrations.</li>
+              <li>Troubleshoot technical issues and escalate complex problems.</li>
+              <li>Document best practices and contribute to knowledge bases.</li>
+            </ul>
+            <p class="skills">Skills needed: API basics, identity management concepts, troubleshooting, client communication, and technical documentation.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Data and Analytics -->
-    <button class="accordion">Data and Analytics</button>
-    <div class="panel">
-      <h3>Data Analyst – Entry Level</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
-      <p>This role supports the analysis and interpretation of user behavior, product performance, and business metrics across SurveyMonkey’s platform. The analyst will work with structured and unstructured data to generate insights that inform product development and customer engagement strategies.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Building dashboards, conducting exploratory analyses</li>
-        <li>Collaborating with cross-functional teams to support data-driven decision-making</li>
-      </ul>
-      <p><strong>Skills:</strong> Proficiency in SQL, data visualization tools, and statistical analysis</p>
-
-      <h3>Junior Data Engineer</h3>
-      <p><strong>Location:</strong> Remote with flexibility for occasional in-person collaboration</p>
-      <p>The Junior Data Engineer will assist in developing and maintaining data pipelines that support analytics and reporting across the organization.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Implementing ETL processes and ensuring data integrity</li>
-        <li>Contributing to the scalability of SurveyMonkey’s data infrastructure</li>
-      </ul>
-      <p><strong>Skills:</strong> Familiarity with cloud-based data platforms, Python scripting, and data modeling concepts</p>
-
-      <h3>Business Intelligence Associate</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid engagement for team initiatives</p>
-      <p>This position focuses on transforming raw data into actionable insights for internal stakeholders.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Supporting reporting frameworks and maintaining KPIs</li>
-        <li>Optimizing business processes through data analysis</li>
-      </ul>
-      <p><strong>Skills:</strong> Experience with BI tools such as Tableau or Looker</p>
-    </div>
+    <details>
+      <summary><h3>Data and Analytics</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Data Analyst – Entry Level</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
+            <p>This role analyzes user behavior, product performance, and business metrics, supporting data-driven decisions.</p>
+            <p><strong>Responsibilities:</strong> Build dashboards, conduct exploratory analyses, collaborate cross-functionally.</p>
+            <p class="skills">Skills needed: SQL, data visualization, statistical analysis, critical thinking, and communication.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Junior Data Engineer</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with flexibility for occasional in-person collaboration</p>
+            <p>Assist in developing and maintaining data pipelines and ETL processes ensuring data integrity.</p>
+            <p><strong>Responsibilities:</strong> Implement ETL, maintain data infrastructure, support scalability.</p>
+            <p class="skills">Skills needed: Python scripting, cloud data platforms, data modeling, warehousing basics.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Business Intelligence Associate</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid engagement</p>
+            <p>Transform raw data into actionable insights and support reporting frameworks.</p>
+            <p><strong>Responsibilities:</strong> KPI maintenance, process optimization, collaboration with marketing and product teams.</p>
+            <p class="skills">Skills needed: BI tools (Tableau, Looker), analytics, attention to detail, and problem-solving.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Sales -->
-    <button class="accordion">Sales</button>
-    <div class="panel">
-      <h3>Account Development Representative</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
-      <p>This role focuses on identifying and qualifying new business opportunities across SurveyMonkey’s enterprise and mid-market segments.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Engaging with prospective clients and scheduling discovery meetings</li>
-      </ul>
-      <p><strong>Skills:</strong> Strong communication, proactive outreach, quick learning of product value</p>
-
-      <h3>Customer Success Associate – Sales Enablement</h3>
-      <p><strong>Location:</strong> Remote with flexibility for in-person team sessions</p>
-      <p>Supports post-sale engagement by ensuring clients maximize SurveyMonkey’s platform value.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Onboarding accounts, providing product training</li>
-        <li>Identifying expansion or renewal opportunities</li>
-      </ul>
-
-      <h3>Solutions Consultant – Enterprise Sales</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid participation for strategic meetings</p>
-      <p>Partners with sales team to deliver tailored demos and respond to technical inquiries.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Supporting RFP processes and aligning solutions with client objectives</li>
-      </ul>
-    </div>
+    <details>
+      <summary><h3>Sales</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Account Development Representative</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
+            <p>Identify and qualify new business opportunities in enterprise and mid-market segments.</p>
+            <p><strong>Responsibilities:</strong> Prospect outreach, discovery meetings, product value articulation.</p>
+            <p class="skills">Skills needed: Communication, proactive outreach, SaaS knowledge, sales fundamentals.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Customer Success Associate – Sales Enablement</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with flexibility for in-person sessions</p>
+            <p>Support post-sale client engagement by onboarding and providing product training.</p>
+            <p><strong>Responsibilities:</strong> Client onboarding, training, expansion opportunity identification.</p>
+            <p class="skills">Skills needed: Client relationship management, technical understanding, empathy, training skills.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Solutions Consultant – Enterprise Sales</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid meetings</p>
+            <p>Deliver product demos, respond to technical inquiries, and support RFP processes.</p>
+            <p><strong>Responsibilities:</strong> Demonstrations, technical consulting, proposal support.</p>
+            <p class="skills">Skills needed: SaaS familiarity, consultative sales, communication, technical acumen.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Product -->
-    <button class="accordion">Product</button>
-    <div class="panel">
-      <h3>Director of Product Growth</h3>
-      <p><strong>Location:</strong> Remote (US) with optional hybrid collaboration</p>
-      <p>Leads product-led growth initiatives focusing on user acquisition and retention.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Executing data-informed strategies and overseeing experimentation frameworks</li>
-        <li>Collaborating across teams and mentoring growth team</li>
-      </ul>
-
-      <h3>Senior Product Manager – Platform Experience</h3>
-      <p><strong>Location:</strong> Remote with flexible in-person alignment</p>
-      <p>Shapes the core platform experience and defines product strategy.</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul>
-        <li>Prioritizing feature development and ensuring alignment with customer needs</li>
-      </ul>
-    </div>
+    <details>
+      <summary><h3>Product</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Director of Product Growth</summary>
+          <div>
+            <p><strong>Location:</strong> Remote (US) with optional hybrid collaboration</p>
+            <p>Lead product-led growth initiatives focusing on user acquisition, engagement, and retention.</p>
+            <p><strong>Responsibilities:</strong> Develop strategies, oversee experimentation, mentor growth team.</p>
+            <p class="skills">Skills needed: Product management, data-informed decision-making, leadership, B2C or PLG experience.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Senior Product Manager – Platform Experience</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with flexible in-person alignment</p>
+            <p>Shape core platform experience and define product strategy across SurveyMonkey tools.</p>
+            <p><strong>Responsibilities:</strong> Prioritize features, collaborate with design and engineering.</p>
+            <p class="skills">Skills needed: SaaS product management, analytical mindset, user-centric development.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Customer Operations -->
-    <button class="accordion">Customer Operations</button>
-    <div class="panel">
-      <h3>Customer Support Associate</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid engagement</p>
-      <p>Provides front-line support resolving product inquiries and troubleshooting.</p>
-
-      <h3>Customer Advocacy Coordinator</h3>
-      <p><strong>Location:</strong> Remote with flexibility for collaboration</p>
-      <p>Gathers and shares customer feedback to improve product experience.</p>
-
-      <h3>Sales & Post-Sales Operations Assistant</h3>
-      <p><strong>Location:</strong> Remote with optional in-office collaboration</p>
-      <p>Supports operational side of customer acquisition and retention.</p>
-    </div>
+    <details>
+      <summary><h3>Customer Operations</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Customer Support Associate</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid engagement</p>
+            <p>Provide front-line support resolving product inquiries and troubleshooting.</p>
+            <p><strong>Skills needed:</strong> Strong communication, empathy, platform knowledge, problem-solving.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Customer Advocacy Coordinator</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with flexible team collaboration</p>
+            <p>Gather and share customer feedback to improve product experience.</p>
+            <p><strong>Skills needed:</strong> Customer engagement, feedback analysis, cross-team collaboration.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Sales & Post-Sales Operations Assistant</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional in-office collaboration</p>
+            <p>Support CRM data hygiene, sales enablement, and onboarding workflows.</p>
+            <p><strong>Skills needed:</strong> Organizational skills, CRM familiarity, multitasking.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Product Design & Research -->
-    <button class="accordion">Product Design & Research</button>
-    <div class="panel">
-      <h3>Product Design Intern / Junior Designer</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid mentorship</p>
-      <p>Supports design team with wireframing, prototyping, and design system updates.</p>
-
-      <h3>UX Research Assistant</h3>
-      <p><strong>Location:</strong> Remote with flexibility for collaborative research</p>
-      <p>Assists in planning and executing user research studies.</p>
-    </div>
+    <details>
+      <summary><h3>Product Design & Research</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Product Design Intern / Junior Designer</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid mentorship</p>
+            <p>Support design team with wireframing, prototyping, and system updates.</p>
+            <p><strong>Skills needed:</strong> Design tools (Figma), portfolio, UX basics.</p>
+          </div>
+        </details>
+        <details>
+          <summary>UX Research Assistant</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with flexible research sessions</p>
+            <p>Assist planning and executing user research studies.</p>
+            <p><strong>Skills needed:</strong> Research methods, note-taking, synthesis.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Marketing -->
-    <button class="accordion">Marketing</button>
-    <div class="panel">
-      <h3>Marketing Operations Coordinator</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid syncs</p>
-      <p>Supports campaign execution, email marketing workflows, and performance tracking.</p>
-
-      <h3>Content Marketing Assistant</h3>
-      <p><strong>Location:</strong> Remote with flexibility for collaboration</p>
-      <p>Assists drafting blog posts, social media content, and customer stories.</p>
-
-      <h3>Brand Copywriter</h3>
-      <p><strong>Location:</strong> Remote</p>
-      <p>Crafts clear, engaging copy across digital channels.</p>
-    </div>
+    <details>
+      <summary><h3>Marketing</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Marketing Operations Coordinator</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid syncs</p>
+            <p>Support campaign execution, email workflows, and performance tracking.</p>
+            <p><strong>Skills needed:</strong> Marketing automation, analytics, attention to detail.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Content Marketing Assistant</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with creative collaboration</p>
+            <p>Assist drafting blog posts, social media, and customer stories.</p>
+            <p><strong>Skills needed:</strong> Writing, storytelling, social media knowledge.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Brand Copywriter</summary>
+          <div>
+            <p><strong>Location:</strong> Remote</p>
+            <p>Craft engaging copy across digital channels, ensuring brand consistency.</p>
+            <p><strong>Skills needed:</strong> Copywriting, brand awareness, tech or consumer brand experience.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Finance -->
-    <button class="accordion">Finance</button>
-    <div class="panel">
-      <h3>Finance Operations Analyst (Entry-Level)</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
-      <p>Supports budgeting, forecasting, and financial reporting.</p>
-
-      <h3>Financial Systems Coordinator</h3>
-      <p><strong>Location:</strong> Remote</p>
-      <p>Assists managing finance tools and user support.</p>
-    </div>
+    <details>
+      <summary><h3>Finance</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Finance Operations Analyst (Entry-Level)</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
+            <p>Support budgeting, forecasting, and financial reporting across teams.</p>
+            <p><strong>Skills needed:</strong> Excel proficiency, financial principles, attention to detail.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Financial Systems Coordinator</summary>
+          <div>
+            <p><strong>Location:</strong> Remote</p>
+            <p>Manage finance tools like NetSuite and Zuora, supporting system configuration and users.</p>
+            <p><strong>Skills needed:</strong> System management, process documentation, user support.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
     <!-- Administration -->
-    <button class="accordion">Administration</button>
-    <div class="panel">
-      <h3>Administrative Coordinator</h3>
-      <p><strong>Location:</strong> Remote with optional hybrid support</p>
-      <p>Provides scheduling, documentation, and operational support.</p>
+    <details>
+      <summary><h3>Administration</h3></summary>
+      <div class="content">
+        <details>
+          <summary>Administrative Coordinator</summary>
+          <div>
+            <p><strong>Location:</strong> Remote with optional hybrid event support</p>
+            <p>Provide scheduling, documentation, and operational support internally.</p>
+            <p><strong>Skills needed:</strong> Organization, digital tools proficiency, multitasking.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Team Operations Assistant</summary>
+          <div>
+            <p><strong>Location:</strong> Remote</p>
+            <p>Support internal communications, onboarding logistics, and coordination.</p>
+            <p><strong>Skills needed:</strong> Workflow structuring, team collaboration, communication.</p>
+          </div>
+        </details>
+      </div>
+    </details>
 
-      <h3>Team Operations Assistant</h3>
-      <p><strong>Location:</strong> Remote</p>
-      <p>Supports internal communications, onboarding, and coordination.</p>
-    </div>
+  </section>
 
-  </main>
+</div>
 
-  <script>
-    // Accordion functionality
-    const accordions = document.getElementsByClassName("accordion");
-    for(let i = 0; i < accordions.length; i++) {
-      accordions[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-  </script>
 </body>
 </html>
