@@ -2,308 +2,426 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join Our Remote Team | SurveyMonkey Careers</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>SurveyMonkey Careers | Join Our Remote Team</title>
   <style>
+    /* Base and theme colors */
+    :root {
+      --green: #2c7a7b;
+      --orange: #f97316;
+      --gray-light: #f4f4f4;
+      --gray-dark: #555;
+      --font-family: Arial, sans-serif;
+    }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: var(--font-family);
+      margin: 0; padding: 0;
       color: #333;
-      background-color: #fff;
       line-height: 1.6;
+      background-color: #fff;
     }
-
-    header {
-      position: relative;
-      z-index: 1;
-      background-color: #e6fffa;
-      padding: 40px 20px 20px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('your-image-path-or-base64') no-repeat center center;
-      background-size: cover;
-      opacity: 0.25;
-      z-index: 0;
-    }
-
-    header * {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      color: #2c7a7b;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1em;
-    }
-
-    header strong {
-      color: #2c7a7b;
-    }
-
-    .apply-now {
-      display: block;
-      width: 200px;
-      margin: 20px auto;
-      padding: 10px;
-      background-color: #2c7a7b;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
     .container {
       max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
-    section {
-      margin-bottom: 40px;
+    h1, h2, h3, h4 {
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
-
-    h2 {
-      color: #2c7a7b;
-      margin-bottom: 10px;
-    }
-
-    .card {
-      background-color: #f9f9f9;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      border-left: 4px solid #2c7a7b;
-      padding-left: 10px;
-      margin-top: 0;
-    }
-
-    .divider {
-      border-left: 4px solid #2c7a7b;
-      padding-left: 10px;
-      margin-top: 30px;
-      font-weight: bold;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-
-    th {
-      background-color: #2c7a7b;
-      color: white;
-      padding: 10px;
-      text-align: left;
-    }
-
-    td {
-      padding: 10px;
-    }
-
-    footer {
+    h1 {
+      font-size: 2.25rem;
       text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      margin: 40px 20px 20px;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
     }
-
-    /* Mobile responsiveness */
+    /* Centered sections */
+    .centered-section {
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
+      color: var(--gray-dark);
+    }
+    .centered-section p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    /* Slight ashy background for values section */
+    .values-section {
+      background-color: var(--gray-light);
+      padding: 2rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+    .value-item {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .value-item h4 {
+      margin-top: 1rem;
+      color: var(--orange);
+      font-weight: 600;
+    }
+    .value-item .img-placeholder {
+      width: 150px;
+      height: 100px;
+      background: #ddd;
+      border-radius: 6px;
+      margin: 0.5rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+    /* Explore roles section */
+    #explore-roles {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #explore-roles p.tip {
+      font-style: italic;
+      color: var(--gray-dark);
+      font-size: 0.95rem;
+    }
+    /* Accordion styles */
+    .accordion {
+      background-color: var(--green);
+      color: white;
+      cursor: pointer;
+      padding: 15px 20px;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      margin-bottom: 0.3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion:hover,
+    .accordion.active {
+      background-color: var(--orange);
+    }
+    .accordion:after {
+      content: "\002B"; /* plus sign */
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .accordion.active:after {
+      content: "\2212"; /* minus sign */
+    }
+    .panel {
+      padding: 0 20px 15px 20px;
+      background-color: #f9f9f9;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-left: 4px solid var(--green);
+      border-radius: 0 0 5px 5px;
+      margin-bottom: 1.5rem;
+    }
+    .panel p, .panel ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+    .panel ul {
+      padding-left: 1.25rem;
+    }
+    .panel ul li {
+      margin-bottom: 0.25rem;
+    }
+    /* Responsive */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
+      h1 {
+        font-size: 1.75rem;
       }
-
-      .apply-now {
-        width: 90%;
-        font-size: 1em;
+      .accordion {
+        font-size: 1rem;
+        padding: 12px 15px;
       }
-
-      table, th, td {
-        font-size: 0.9em;
+      .value-item .img-placeholder {
+        width: 120px;
+        height: 80px;
       }
-
       .container {
-        padding: 10px;
+        padding: 0 0.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Join Our Remote Team</h1>
-    <p>Explore open roles in <strong>Customer Support</strong>, <strong>Data Entry</strong>, and <strong>Administrative Assistance</strong>—all fully remote and impact-driven.</p>
-    <a class="apply-now" href="#application-form">Apply Now</a>
-  </header>
+  <main class="container">
 
-  <div class="container">
-    <section>
-      <h2>Customer Support Specialist</h2>
-      <div class="card">
-        <h3>Team Environment</h3>
-        <p>Join our dynamic, customer-obsessed Support team to resolve issues and deliver exceptional service.</p>
-        <h3 class="divider">Key Responsibilities</h3>
-        <ul>
-          <li>Respond to customer inquiries via email, chat, and other channels</li>
-          <li>Troubleshoot and escalate complex issues</li>
-          <li>Maintain detailed records of interactions</li>
-          <li>Collaborate with product and engineering teams</li>
-          <li>Contribute to internal support documentation</li>
-        </ul>
+    <!-- Heading -->
+    <h1>SurveyMonkey is where the curious come to grow.</h1>
+
+    <!-- Who We Are -->
+    <section class="centered-section" id="who-we-are">
+      <h2>Who We Are</h2>
+      <p>
+        SurveyMonkey is the world’s most popular platform for surveys and forms, built for business—loved by users. We combine powerful capabilities with intuitive design, effectively serving every use case, from customer experience to employee engagement, market research to payment and registration forms. With built-in research expertise and AI-powered technology, it’s like having a team of expert researchers right at your fingertips.
+      </p>
+      <p>
+        Trusted by millions—from startups to Fortune 500 companies—SurveyMonkey helps teams gather insights and information that inspire better decisions, create experiences people love, and drive business growth.
+      </p>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="value-item">
+        <div class="img-placeholder">Employee listening intently<br>Photo placeholder</div>
+        <h4>Stay curious</h4>
+        <p>Curiosity is our superpower. We embrace a growth mindset, we take risks, and we learn from the outcomes.</p>
       </div>
-
-      <h2>Data Entry Analyst</h2>
-      <div class="card">
-        <h3>Team Environment</h3>
-        <p>Support our Operations and Analytics team by maintaining and organizing large datasets that drive business decisions.</p>
-        <h3 class="divider">Key Responsibilities</h3>
-        <ul>
-          <li>Enter, update, and verify data with accuracy</li>
-          <li>Perform audits to ensure data integrity</li>
-          <li>Generate reports and visualizations</li>
-          <li>Collaborate with analysts to support data-driven initiatives</li>
-          <li>Maintain strict data confidentiality</li>
-        </ul>
+      <div class="value-item">
+        <div class="img-placeholder">Team members placing post-its<br>Photo placeholder</div>
+        <h4>Innovate for customers</h4>
+        <p>We grow and innovate right alongside our customers. To deliver value to them, we listen, we understand, we act—and we keep at it.</p>
       </div>
-
-      <h2>Administrative Assistant</h2>
-      <div class="card">
-        <h3>Team Environment</h3>
-        <p>Collaborate across departments within our Business Operations team to support leadership and drive organizational success.</p>
-        <h3 class="divider">Key Responsibilities</h3>
-        <ul>
-          <li>Manage calendars, meetings, and scheduling</li>
-          <li>Prepare documents, presentations, and internal communications</li>
-          <li>Support event planning and coordination</li>
-          <li>Maintain digital filing systems and administrative workflows</li>
-        </ul>
+      <div class="value-item">
+        <div class="img-placeholder">Diverse employees building with Lego<br>Photo placeholder</div>
+        <h4>Stand for equality</h4>
+        <p>We champion diversity and welcome individuality. Together we create an equitable workplace where each person can truly belong and do their best work.</p>
+      </div>
+      <div class="value-item">
+        <div class="img-placeholder">Two employees walking down hallway<br>Photo placeholder</div>
+        <h4>Trust the team</h4>
+        <p>We succeed as one global team. We are accountable to one another, value opinions, and communicate with clarity and kindness. We prioritize health and support one another.</p>
+      </div>
+      <div class="value-item">
+        <div class="img-placeholder">Group of employees in colorful shirts<br>Photo placeholder</div>
+        <h4>Make it happen</h4>
+        <p>Our customers, colleagues, and community inspire us to compete, win, and give back. We focus, we act with integrity, and we own the results.</p>
       </div>
     </section>
 
-    <section>
-      <h2>Key Qualifications</h2>
-      <div class="card">
-        <ul>
-          <li>0–3 years of experience in administrative support, data entry, or customer service</li>
-          <li>Strong multitasking, communication, and problem-solving abilities</li>
-          <li>Exceptional attention to detail and organizational skills</li>
-          <li>Proficient in Microsoft Office, Google Workspace, and Zoom</li>
-          <li>Familiar with CRM platforms such as Zendesk or Salesforce</li>
-          <li>Experience using survey and data insight tools (e.g., SurveyMonkey)</li>
-          <li>Ability to create analytical reports or dashboards to support strategic decision-making</li>
-          <li>Exposure to basic scripting or automation tools (e.g., macros, Zapier)</li>
-          <li>Background in knowledge base development, training facilitation, or content creation</li>
-          <li>Comfortable handling sensitive information and working independently</li>
-        </ul>
-      </div>
+    <!-- Explore Roles Section -->
+    <section id="explore-roles" class="centered-section">
+      <h2>Explore open roles by department</h2>
+      <p>You’re in the right place. SurveyMonkey jobs are listed only on this careers page, our verified LinkedIn, Indeed, and Naukri (for roles in India). If you apply through LinkedIn, you’ll be redirected to our secure applicant system, Greenhouse.</p>
+      <p class="tip">Tip: When in doubt, come back to this page—this is the official source for SurveyMonkey jobs. We’re committed to a hiring process that’s secure, transparent, and candidate-first.</p>
     </section>
 
-    <section>
-      <h2>Our Commitment to Inclusion</h2>
-      <p>We understand that not every applicant will meet every qualification listed. At SurveyMonkey, we value diverse experiences and encourage individuals from all backgrounds to apply. Whether your career path is traditional or unconventional, your unique perspective is welcome here.</p>
-    </section>
+    <!-- Accordion Sections for Departments -->
 
-    <section>
-      <h2>Compensation and Benefits</h2>
-      <div class="card">
-        <p>We offer a competitive compensation structure aligned with regional cost-of-living tiers:</p>
-        <table>
-          <thead>
-            <tr><th>Tier</th><th>Locations</th><th>Estimated Salary Range</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Tier 1</td><td>CA, NY, DC, MA, WA, NJ</td><td>$110,000 – $130,300</td></tr>
-            <tr><td>Tier 2</td><td>CO, HI, IL, CT, VA</td><td>$104,000 – $118,000</td></tr>
-            <tr><td>Tier 3</td><td>TX, FL, GA, PA, MN, etc.</td><td>$98,000 – $110,000</td></tr>
-            <tr><td>Tier 4</td><td>AL, AR, KY, NE, WV, etc.</td><td>$90,000 – $102,000</td></tr>
-          </tbody>
-        </table>
+    <!-- Engineering -->
+    <button class="accordion">Engineering</button>
+    <div class="panel">
+      <h3>Cloud Infrastructure Engineer (Entry-Level)</h3>
+      <p><strong>Work Mode:</strong> Remote-first with optional hybrid onboarding or team meetups</p>
+      <p><strong>Focus:</strong> Supporting and scaling SurveyMonkey’s AWS-based infrastructure</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Assist in managing cloud environments (AWS, Terraform, Docker)</li>
+        <li>Monitor system performance and automate infrastructure tasks</li>
+        <li>Collaborate with DevOps and security teams to maintain uptime and compliance</li>
+      </ul>
+      <p><strong>Ideal For:</strong> CS or IT grads with cloud certifications (e.g., AWS Cloud Practitioner)</p>
 
-        <h3 class="divider">Additional Compensation</h3>
-        <ul>
-          <li><strong>Equity Participation:</strong> Eligible employees may participate in our equity program.</li>
-          <li><strong>Performance Bonuses:</strong> Based on individual and company performance.</li>
-        </ul>
+      <h3>Survey Platform QA Analyst</h3>
+      <p><strong>Work Mode:</strong> Remote with optional hybrid collaboration during product launches</p>
+      <p><strong>Focus:</strong> Ensuring the quality and functionality of SurveyMonkey’s survey tools</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Test new survey features and integrations (e.g., Microsoft Teams, Slack)</li>
+        <li>Write test cases and report bugs across web and mobile platforms</li>
+        <li>Work closely with product and engineering teams to improve user experience</li>
+      </ul>
+      <p><strong>Ideal For:</strong> Grads with a background in software testing, UX, or product QA</p>
 
-        <h3 class="divider">Benefits Package</h3>
-        <ul>
-          <li>Comprehensive medical, dental, and vision insurance</li>
-          <li>401(k) retirement plan with company match</li>
-          <li>Paid sick leave and personal time off</li>
-          <li>Parental leave and family support resources</li>
-        </ul>
-      </div>
-    </section>
+      <h3>SaaS Integration Support Engineer</h3>
+      <p><strong>Work Mode:</strong> Remote with optional hybrid for team syncs or client onboarding</p>
+      <p><strong>Focus:</strong> Helping enterprise clients integrate SurveyMonkey with platforms like Microsoft Entra ID, Salesforce, or Oracle</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Guide clients through API usage, SSO setup, and app integrations</li>
+        <li>Troubleshoot technical issues and escalate complex problems</li>
+        <li>Document best practices and contribute to knowledge bases</li>
+      </ul>
+      <p><strong>Ideal For:</strong> Entry-level engineers with strong communication skills and a basic understanding of APIs and identity management</p>
+    </div>
 
-    <section>
-      <h2>Accessibility and Accommodations</h2>
-      <div class="card">
-        <p>We are committed to fostering an accessible hiring process. If you need assistance, please contact <a href="mailto:accommodations@surveymonkeyteam.com">accommodations@surveymonkeyteam.com</a>.</p>
-      </div>
-    </section>
+    <!-- Data and Analytics -->
+    <button class="accordion">Data and Analytics</button>
+    <div class="panel">
+      <h3>Data Analyst – Entry Level</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
+      <p>This role supports the analysis and interpretation of user behavior, product performance, and business metrics across SurveyMonkey’s platform. The analyst will work with structured and unstructured data to generate insights that inform product development and customer engagement strategies.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Building dashboards, conducting exploratory analyses</li>
+        <li>Collaborating with cross-functional teams to support data-driven decision-making</li>
+      </ul>
+      <p><strong>Skills:</strong> Proficiency in SQL, data visualization tools, and statistical analysis</p>
 
-    <section>
-      <h2 class="divider">Equal Opportunity Commitment</h2>
-      <p>We do not discriminate based on race, religion, sex, gender identity, age, disability, or any protected status. Qualified applicants with criminal histories will be considered in accordance with applicable laws.</p>
-    </section>
+      <h3>Junior Data Engineer</h3>
+      <p><strong>Location:</strong> Remote with flexibility for occasional in-person collaboration</p>
+      <p>The Junior Data Engineer will assist in developing and maintaining data pipelines that support analytics and reporting across the organization.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Implementing ETL processes and ensuring data integrity</li>
+        <li>Contributing to the scalability of SurveyMonkey’s data infrastructure</li>
+      </ul>
+      <p><strong>Skills:</strong> Familiarity with cloud-based data platforms, Python scripting, and data modeling concepts</p>
 
-    <hr />
+      <h3>Business Intelligence Associate</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid engagement for team initiatives</p>
+      <p>This position focuses on transforming raw data into actionable insights for internal stakeholders.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Supporting reporting frameworks and maintaining KPIs</li>
+        <li>Optimizing business processes through data analysis</li>
+      </ul>
+      <p><strong>Skills:</strong> Experience with BI tools such as Tableau or Looker</p>
+    </div>
 
-    <section id="application-form">
-      <h2>Submit Your Application</h2>
-      <p><strong>Questions?</strong> Reach us at <a href="mailto:careers@surveymonkeyteam.com">careers@surveymonkeyteam.com</a></p>
-      <form action="https://formsubmit.co/careers@surveymonkeyteam.com" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" value="New Application - SurveyMonkey Careers">
-        <input type="hidden" name="_captcha" value="false">
+    <!-- Sales -->
+    <button class="accordion">Sales</button>
+    <div class="panel">
+      <h3>Account Development Representative</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
+      <p>This role focuses on identifying and qualifying new business opportunities across SurveyMonkey’s enterprise and mid-market segments.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Engaging with prospective clients and scheduling discovery meetings</li>
+      </ul>
+      <p><strong>Skills:</strong> Strong communication, proactive outreach, quick learning of product value</p>
 
-        <label for="name">Full Name</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+      <h3>Customer Success Associate – Sales Enablement</h3>
+      <p><strong>Location:</strong> Remote with flexibility for in-person team sessions</p>
+      <p>Supports post-sale engagement by ensuring clients maximize SurveyMonkey’s platform value.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Onboarding accounts, providing product training</li>
+        <li>Identifying expansion or renewal opportunities</li>
+      </ul>
 
-        <label for="email">Email Address</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+      <h3>Solutions Consultant – Enterprise Sales</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid participation for strategic meetings</p>
+      <p>Partners with sales team to deliver tailored demos and respond to technical inquiries.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Supporting RFP processes and aligning solutions with client objectives</li>
+      </ul>
+    </div>
 
-        <label for="role">Role You're Applying For</label><br>
-        <select id="role" name="role" required>
-          <option value="">Select a Role</option>
-          <option value="Customer Support Specialist">Customer Support Specialist</option>
-          <option value="Data Entry Analyst">Data Entry Analyst</option>
-          <option value="Administrative Assistant">Administrative Assistant</option>
-        </select><br><br>
+    <!-- Product -->
+    <button class="accordion">Product</button>
+    <div class="panel">
+      <h3>Director of Product Growth</h3>
+      <p><strong>Location:</strong> Remote (US) with optional hybrid collaboration</p>
+      <p>Leads product-led growth initiatives focusing on user acquisition and retention.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Executing data-informed strategies and overseeing experimentation frameworks</li>
+        <li>Collaborating across teams and mentoring growth team</li>
+      </ul>
 
-        <label for="linkedin">LinkedIn Profile (Optional)</label><br>
-        <input type="url" id="linkedin" name="linkedin"><br><br>
+      <h3>Senior Product Manager – Platform Experience</h3>
+      <p><strong>Location:</strong> Remote with flexible in-person alignment</p>
+      <p>Shapes the core platform experience and defines product strategy.</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul>
+        <li>Prioritizing feature development and ensuring alignment with customer needs</li>
+      </ul>
+    </div>
 
-        <label for="resume">Upload Resume</label><br>
-        <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx" required><br><br>
+    <!-- Customer Operations -->
+    <button class="accordion">Customer Operations</button>
+    <div class="panel">
+      <h3>Customer Support Associate</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid engagement</p>
+      <p>Provides front-line support resolving product inquiries and troubleshooting.</p>
 
-        <button type="submit">Send My Application</button>
-      </form>
-    </section>
+      <h3>Customer Advocacy Coordinator</h3>
+      <p><strong>Location:</strong> Remote with flexibility for collaboration</p>
+      <p>Gathers and shares customer feedback to improve product experience.</p>
 
-    <footer>
-      © 2025 SurveyMonkey. All rights reserved. | 910 Park Pl Ste 300, San Mateo, CA 94403
-    </footer>
-  </div>
+      <h3>Sales & Post-Sales Operations Assistant</h3>
+      <p><strong>Location:</strong> Remote with optional in-office collaboration</p>
+      <p>Supports operational side of customer acquisition and retention.</p>
+    </div>
+
+    <!-- Product Design & Research -->
+    <button class="accordion">Product Design & Research</button>
+    <div class="panel">
+      <h3>Product Design Intern / Junior Designer</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid mentorship</p>
+      <p>Supports design team with wireframing, prototyping, and design system updates.</p>
+
+      <h3>UX Research Assistant</h3>
+      <p><strong>Location:</strong> Remote with flexibility for collaborative research</p>
+      <p>Assists in planning and executing user research studies.</p>
+    </div>
+
+    <!-- Marketing -->
+    <button class="accordion">Marketing</button>
+    <div class="panel">
+      <h3>Marketing Operations Coordinator</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid syncs</p>
+      <p>Supports campaign execution, email marketing workflows, and performance tracking.</p>
+
+      <h3>Content Marketing Assistant</h3>
+      <p><strong>Location:</strong> Remote with flexibility for collaboration</p>
+      <p>Assists drafting blog posts, social media content, and customer stories.</p>
+
+      <h3>Brand Copywriter</h3>
+      <p><strong>Location:</strong> Remote</p>
+      <p>Crafts clear, engaging copy across digital channels.</p>
+    </div>
+
+    <!-- Finance -->
+    <button class="accordion">Finance</button>
+    <div class="panel">
+      <h3>Finance Operations Analyst (Entry-Level)</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid collaboration</p>
+      <p>Supports budgeting, forecasting, and financial reporting.</p>
+
+      <h3>Financial Systems Coordinator</h3>
+      <p><strong>Location:</strong> Remote</p>
+      <p>Assists managing finance tools and user support.</p>
+    </div>
+
+    <!-- Administration -->
+    <button class="accordion">Administration</button>
+    <div class="panel">
+      <h3>Administrative Coordinator</h3>
+      <p><strong>Location:</strong> Remote with optional hybrid support</p>
+      <p>Provides scheduling, documentation, and operational support.</p>
+
+      <h3>Team Operations Assistant</h3>
+      <p><strong>Location:</strong> Remote</p>
+      <p>Supports internal communications, onboarding, and coordination.</p>
+    </div>
+
+  </main>
+
+  <script>
+    // Accordion functionality
+    const accordions = document.getElementsByClassName("accordion");
+    for(let i = 0; i < accordions.length; i++) {
+      accordions[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
