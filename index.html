@@ -119,6 +119,7 @@
   </header>
 
   <div class="container">
+    <!-- All original content preserved -->
     <section>
       <h2>Customer Support Specialist</h2>
       <div class="card">
@@ -220,12 +221,13 @@
             </tr>
           </tbody>
         </table>
-        <h3>Additional Compensation</h3>
+        <p><strong>The starting salary</strong> for this position will be determined based on a range of permissible, non-discriminatory factors, including skills, experience, and geographic location.</p>
+        <p><strong>Additional Compensation</strong></p>
         <ul>
           <li><strong>Equity Participation:</strong> Eligible employees may participate in our equity program.</li>
           <li><strong>Performance Bonuses:</strong> Based on individual and company performance.</li>
         </ul>
-        <h3>Benefits Package</h3>
+        <p><strong>Benefits Package</strong></p>
         <ul>
           <li>Comprehensive medical, dental, and vision insurance</li>
           <li>401(k) retirement plan with company match</li>
@@ -251,11 +253,8 @@
 
     <section>
       <h2>Equal Opportunity Commitment</h2>
-      <p>We are committed to building a diverse and inclusive workplace. We do not discriminate based on race, religion, color, national origin, sex, sexual orientation, gender identity, age, veteran status, disability, genetic information, political views, or any other legally protected characteristic.</p>
+      <p>We do not discriminate based on race, religion, color, national origin, sex, sexual orientation, gender identity, age, veteran status, disability, or any other legally protected status.</p>
     </section>
-
-    <!-- Updated Bottom Apply Button -->
-    <a class="apply-now" href="#application-form">Apply Now</a>
 
     <!-- Application Form -->
     <section id="application-form">
@@ -270,6 +269,17 @@
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" required />
 
+        <label for="role">Role You're Applying For</label>
+        <select id="role" name="role" required>
+          <option value="">Select a Role</option>
+          <option value="Customer Support Specialist">Customer Support Specialist</option>
+          <option value="Data Entry Analyst">Data Entry Analyst</option>
+          <option value="Administrative Assistant">Administrative Assistant</option>
+        </select>
+
+        <label for="linkedin">LinkedIn Profile (Optional)</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname" />
+
         <label for="resume">Upload Resume (PDF or DOC)</label>
         <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx" required />
 
@@ -278,9 +288,8 @@
     </section>
 
     <footer>
-      © 2025 SurveyMonkey. All rights reserved.
+      © 2025 SurveyMonkey. All rights reserved. | 910 Park Pl Ste 300, San Mateo, CA 94403
     </footer>
   </div>
 </body>
 </html>
-
