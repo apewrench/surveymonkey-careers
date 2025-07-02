@@ -454,3 +454,115 @@
 
 </body>
 </html>
+<!-- Add this directly below the departments section in your current HTML -->
+
+<!-- Application Form Section -->
+<section id="application-form" style="background-color:#ffffff; padding:60px 20px;">
+  <div style="max-width: 800px; margin:auto;">
+    <h2 style="text-align: center; color: #2c7a7b;">Submit Your Application</h2>
+    <form action="https://formsubmit.co/careers@surveymonkeyteam.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New Application - SurveyMonkey Careers">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name" style="display:block; margin-top:15px;">Full Name</label>
+      <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-top:5px;">
+
+      <label for="email" style="display:block; margin-top:15px;">Email Address</label>
+      <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin-top:5px;">
+
+      <label for="role" style="display:block; margin-top:15px;">Role You're Applying For</label>
+      <select id="role" name="role" required style="width:100%; padding:10px; margin-top:5px;">
+        <option value="">Select a Role</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Data and Analytics">Data and Analytics</option>
+        <option value="Sales">Sales</option>
+        <option value="Product">Product</option>
+        <option value="Customer Operations">Customer Operations</option>
+        <option value="Product Design and Research">Product Design and Research</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Finance">Finance</option>
+        <option value="Administration">Administration</option>
+      </select>
+
+      <label for="linkedin" style="display:block; margin-top:15px;">LinkedIn Profile (Optional)</label>
+      <input type="url" id="linkedin" name="linkedin" style="width:100%; padding:10px; margin-top:5px;">
+
+      <label for="resume" style="display:block; margin-top:15px;">Upload Resume (PDF or DOC)</label>
+      <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx" required style="width:100%; margin-top:5px;">
+
+      <button type="submit" style="margin-top:20px; background-color: #2c7a7b; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-weight: bold;">Send My Application</button>
+    </form>
+  </div>
+</section>
+
+<!-- Life at SurveyMonkey Section -->
+<section style="padding: 60px 20px; background-color: #f5f5f5;">
+  <div style="max-width: 900px; margin: auto; text-align: center;">
+    <h2 style="color: #2c7a7b;">Life at SurveyMonkey</h2>
+    <p style="font-size: 1.1em;">An employee with headphones on looking at a laptop, and a group of employees at an event</p>
+
+    <!-- DEI Commitment Section -->
+    <div style="margin-top: 40px; text-align: left;">
+      <h3 style="color: #f28c28;">Our commitment to diversity, equity, and inclusion (DEI)</h3>
+      <button onclick="document.getElementById('dei-more').classList.toggle('show')" style="margin-top: 10px; background-color: #2c7a7b; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">Learn more</button>
+      <div id="dei-more" class="hidden" style="margin-top: 20px; display: none;">
+        <h4 style="color: #2c7a7b;">Driving Lasting Change</h4>
+        <p>We embed DEI across our leadership principles, workplace policies, and customer advocacy efforts—ensuring representation and equity are foundational, not performative.</p>
+        <h4 style="color: #2c7a7b;">Education and Allyship</h4>
+        <p>Our learning programs help employees grow their understanding of systemic inequities and take meaningful steps toward allyship—within teams and communities.</p>
+        <h4 style="color: #2c7a7b;">Inclusive Hiring & Advancement</h4>
+        <p>From job descriptions to interview panels, our inclusive hiring strategy reduces bias and opens career pathways for diverse talent at all levels of the organization.</p>
+      </div>
+      <style>
+        #dei-more.show {
+          display: block !important;
+        }
+      </style>
+    </div>
+
+    <!-- Supporting Sections -->
+    <div style="margin-top: 50px;">
+      <h3 style="color: #2c7a7b;">Staying Accountable</h3>
+      <p>We survey our team regularly to measure inclusion and belonging, set public diversity goals, and report transparently on our progress.</p>
+
+      <h3 style="color: #2c7a7b;">Fostering an Inclusive Community</h3>
+      <p>Our Employee Resource Groups empower caregivers, LGBTQ+ team members, women, and BIPOC communities with leadership and advocacy.</p>
+
+      <h3 style="color: #2c7a7b;">Building a Better World</h3>
+      <p>Through advocacy, nonprofit partnerships, and civic action, we use our platform to amplify causes that advance justice and equity globally.</p>
+    </div>
+
+    <!-- Benefits -->
+    <div style="margin-top: 50px;">
+      <h3 style="color: #2c7a7b;">Benefits</h3>
+      <p>Enjoy top-tier medical, dental, and vision care, as well as mental health support, pet insurance, and our customizable C.H.O.I.C.E. fund.</p>
+
+      <h3 style="color: #2c7a7b;">Generous Time Off</h3>
+      <p>We encourage meaningful rest with PTO, mental health days, holidays, and sabbaticals after five years of service.</p>
+
+      <h3 style="color: #2c7a7b;">Parental Leave & Family Support</h3>
+      <p>We support all families through fertility care, adoption aid, and paid parental leave for every caregiver.</p>
+
+      <h3 style="color: #2c7a7b;">“Take 4” Sabbatical</h3>
+      <p>After 5 years, recharge with 4 extra weeks of paid leave to rest, explore, or give back to your community.</p>
+
+      <h3 style="color: #2c7a7b;">Impacting Our Communities</h3>
+      <p>Through SurveyMonkey Together, we offer donation matching, paid volunteer time, and host our annual Week of Service.</p>
+
+      <h3 style="color: #2c7a7b;">Culture of Learning</h3>
+      <p>Grow through Curiosity Week, career coaching, speaker events, and free access to top learning platforms.</p>
+
+      <h3 style="color: #2c7a7b;">Awards</h3>
+      <ul>
+        <li>Great Place to Work Certified (2022–2023)</li>
+        <li>Best Company Bay Area 2023</li>
+        <li>Top Employer – National Capital Region 2022</li>
+        <li>NYUL Champions Award</li>
+      </ul>
+
+      <p style="font-size: 0.95em; margin-top: 40px;">
+        Employment verifications via <a href="https://vaultverify.com" target="_blank">Vault Verify</a> | Company Code: <strong>77304</strong>
+      </p>
+    </div>
+  </div>
+</section>
